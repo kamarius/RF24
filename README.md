@@ -1,4 +1,4 @@
-Prerequisites
+### Prerequisites
 
 1. Enable SPI 1
 
@@ -17,6 +17,6 @@ Reboot and verify the /dev/spidev1.0 exists; useful [tool for SPI testing](https
 3. Make & install RF24
 
 
-Original documentation
+### Original documentation
 
 **See http://tmrh20.github.io/RF24 for all documentation**
