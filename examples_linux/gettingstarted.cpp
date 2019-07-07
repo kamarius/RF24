@@ -24,6 +24,7 @@ TMRh20 2014 - Updated to work with optimized RF24 Arduino library
 #include <sstream>
 #include <string>
 #include <unistd.h>
+#include <wiringPi.h>
 #include <RF24/RF24.h>
 
 using namespace std;
@@ -46,7 +47,7 @@ using namespace std;
 //RF24 radio(RPI_V2_GPIO_P1_15, RPI_V2_GPIO_P1_24, BCM2835_SPI_SPEED_8MHZ);
 
 // RPi generic:
-RF24 radio(22,0);
+//RF24 radio(26,0);
 
 /*** RPi Alternate ***/
 //Note: Specify SPI BUS 0 or 1 instead of CS pin number.
@@ -81,6 +82,7 @@ bool radioNumber = 1;
 
 // Radio pipe addresses for the 2 nodes to communicate.
 const uint8_t pipes[][6] = {"1Node","2Node"};
+RF24 radio(198, 13);
 
 
 int main(int argc, char** argv){
@@ -203,7 +205,7 @@ int main(int argc, char** argv){
 				// Spew it
 				printf("Got payload(%d) %lu...\n",sizeof(unsigned long), got_time);
 				
-				delay(925); //Delay after payload responded to, minimize RPi CPU time
+				//delay(925); //Delay after payload responded to, minimize RPi CPU time
 				
 			}
 		
